@@ -31,9 +31,9 @@ app$callback(
   function(xcol) {
     col_name = "17. I experience MEANINGFULNESS at work ... (e.g. inspired, trusted, respected, purpose, seen and heard, acknowledged, fulfilled, growth, contribution to something greater, etc.)"
     
-    plot_data <- qwl_df |>
-      rename(analysis_col = col_name) |>
-      filter(residence == "Japan") |>
+    plot_data <- qwl_df %>%
+      rename(analysis_col = col_name) %>%
+      filter(residence == "Japan") %>%
       count(analysis_col)
     
     p <- ggplot(data=plot_data, aes(x=analysis_col)) +
